@@ -1,0 +1,29 @@
+<form class="text-center border border-light mt-5 p-4" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <!-- Name -->
+  <input type="text" id="employee_name" formControlName="employee_name" class="form-control mb-4" [ngClass]="{ 'is-invalid': f.employee_name.errors && (f.employee_name.dirty || f.employee_name.touched) }" placeholder="Name" />
+  <div *ngIf="f.employee_name.errors && (f.employee_name.dirty || f.employee_name.touched)" class="invalid-feedback">
+    <div *ngIf="f.employee_name.errors.required">Name is required</div>
+    <div *ngIf="!f.employee_name.errors.required && f.employee_name.errors.name">{{f.employee_name.errors.name}}</div>
+  </div>
+  <!-- Age -->
+  <input type="text" id="employee_age" formControlName="employee_age" class="form-control mb-4" [ngClass]="{ 'is-invalid': f.employee_age.errors && (f.employee_age.dirty || f.employee_age.touched) }" placeholder="Age" />
+  <div *ngIf="f.employee_age.errors && (f.employee_age.dirty || f.employee_age.touched)" class="invalid-feedback">
+    <div *ngIf="f.employee_age.errors.required">Age is required</div>
+    <div *ngIf="!f.employee_age.errors.required && f.employee_age.errors.age">{{f.employee_age.errors.age}}</div>
+  </div>
+  <!-- Salary -->
+  <input type="text" id="employee_salary" formControlName="employee_salary" class="form-control mb-4" [ngClass]="{ 'is-invalid': f.employee_salary.errors && (f.employee_salary.dirty || f.employee_salary.touched) }" placeholder="Salary" />
+  <div *ngIf="f.employee_salary.errors && (f.employee_salary.dirty || f.employee_salary.touched)" class="invalid-feedback">
+    <div *ngIf="f.employee_salary.errors.required">Salary is required</div>
+    <div *ngIf="!f.employee_salary.errors.required && f.employee_salary.errors.salary">{{f.employee_salary.errors.salary}}</div>
+  </div>
+  <!-- Profile Image -->
+  <input type="text" id="profile_image" formControlName="profile_image" class="form-control mb-4" [ngClass]="{ 'is-invalid': f.profile_image.errors && (f.profile_image.dirty || f.profile_image.touched) }" placeholder="Profile Link" />
+  <div *ngIf="f.profile_image.errors && (f.profile_image.dirty || f.profile_image.touched)" class="invalid-feedback">
+    <div *ngIf="f.profile_image.errors.required">Profile image link is required</div>
+    <div *ngIf="!f.profile_image.errors.required && f.profile_image.errors.pattern">Please enter valid profile image link.</div>
+  </div>
+
+  <button class="mt-0" mdbBtn color="info" block="true" type="submit">Submit</button>
+
+</form>

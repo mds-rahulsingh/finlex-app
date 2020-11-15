@@ -1,0 +1,5 @@
+<div class="container">
+  <h4 class="mb-3">Update Employee</h4>
+  <app-profile-form [mode]="mode" [formData]="formData" *ngIf="formData"></app-profile-form>
+  <h4 class="mb-3 text-center" *ngIf="isError && formData === null">Failed to fetch the data. Please reload!</h4>
+</div>

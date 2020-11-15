@@ -1,0 +1,29 @@
+<div class="container">
+  <h4 class="mt-3">Employee List</h4>
+  <hr/>
+  <table mdbTable class="z-depth-1" *ngIf="filterEmployees && filterEmployees.length > 0">
+    <thead>
+      <tr>
+        <th [mdbTableSort]="filterEmployees" sortBy="">Id</th>
+        <th [mdbTableSort]="filterEmployees" sortBy="employee_name">Name</th>
+        <th [mdbTableSort]="filterEmployees" sortBy="employee_age">Age</th>
+        <th [mdbTableSort]="filterEmployees" sortBy="employee_salary">Salary</th>
+        <th class="text-right">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of filterEmployees">
+        <td scope="row" (click)="employeeDetails(employee)">{{employee?.id}}</td>
+        <td (click)="employeeDetails(employee)">{{employee?.employee_name}}</td>
+        <td (click)="employeeDetails(employee)">{{employee?.employee_age}}</td>
+        <td (click)="employeeDetails(employee)">{{employee?.employee_salary}}</td>
+        <td class="text-right">
+          <button class="my-0" type="button" size="sm" mdbBtn color="danger" (click)="deleteEmployee(employee?.id)" mdbWavesEffect><i class="fa fa-trash"></i></button>
+          <button class="my-0" type="button" size="sm" mdbBtn color="info" (click)="updateEmployee(employee?.id)" mdbWavesEffect><i class="fa fa-pen"></i></button>
+          <button class="my-0" type="button" size="sm" mdbBtn color="warning" (click)="employeeDetails(employee)" mdbWavesEffect><i class="fa fa-list"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 class="mb-3 text-center" *ngIf="isError">Failed to fetch the data. Please reload!</h4>
+</div>
