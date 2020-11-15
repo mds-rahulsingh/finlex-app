@@ -1,7 +1,7 @@
 # FinlexApp
 
 ## Live link
-
+https://finlex-app.web.app/employees
 
 ## Local Installation(using git and ng server)
 Step 01: Run `git clone https://github.com/mds-rahulsingh/finlex-app`  

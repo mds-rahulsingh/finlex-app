@@ -47,7 +47,9 @@ export class EmployeeListComponent implements OnInit {
     this.reloadData();
 
     this.searchService.search.subscribe((searchString) => {
-      this.filterEmployees = this.employees.filter(obj => Object.values(obj).some(val => val.toString().includes(searchString)));
+      this.filterEmployees = this.employees.filter(obj => {
+        return Object.values(obj).some(val => val.toString().toLowerCase().includes(searchString.toLowerCase()));
+      });
     });
   }
 
