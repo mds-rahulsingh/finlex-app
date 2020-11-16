@@ -4,7 +4,7 @@ export const ProfileMode = {
 };
 
 export const Api = {
-  BASEURL: 'https://dummy.restapiexample.com/api/v1'
+  BASEURL: 'http://dummy.restapiexample.com/api/v1'
 };
 
 export const ApiMessages = {
